@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod +x -type d -r
+find . -type d
