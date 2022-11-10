@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Prints clock count
+hours=0
+while [ "$hours" -le 12 ]
+do
+	echo "Hour: $hours"
+	min=1
+	while [ "$min" -lt 60 ]
+	do
+		echo $min
+		((min++))
+	done
+	((hours++))
+done
