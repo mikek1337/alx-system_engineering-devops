@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Prints fizz buzz
+for i in {1..100}
+do
+	if ! (( i % 3 )) && ! (( i % 5 )); then
+		echo "FizzBuzz"
+  	elif ! (( i % 3 )); then
+    		echo "Fizz"
+  	elif ! (( i % 5 )); then
+    		echo "Buzz"
+  	else
+    		echo "$i"
+  	fi
+done
