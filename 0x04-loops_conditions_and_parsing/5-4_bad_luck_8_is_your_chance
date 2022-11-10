@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Print "bad luck" on 4, "good luck" on 8 and "Best School" else
-counter=0
-while [ "$counter" -lt 10 ]
+counter=1
+while [ "$counter" -le 10 ]
 do
 	if [ "$counter" -eq 4 ]
 	then
