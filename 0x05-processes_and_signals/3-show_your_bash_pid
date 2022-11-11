@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Print line that contains bash
+ps -auxf | grep bash
