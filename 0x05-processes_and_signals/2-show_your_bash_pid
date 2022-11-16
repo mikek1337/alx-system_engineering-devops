@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Print bash pid detail
+ps -auxf | grep bash
