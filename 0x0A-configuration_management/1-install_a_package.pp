@@ -1,9 +1,4 @@
 # Install flask for python
 exec{ 'pip-install':
-    command => '/usr/bin/pip3 install flask'
+    command => '/usr/bin/pip3 install flask2.1.0'
     }
-    #package{ 'flask':
-        #ensure  => installed,
-        #require => Exec['pip-install'],
-
-        #}
