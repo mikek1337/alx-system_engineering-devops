@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+path_to_file=$1
+ip=$2
+username=$3
+ssh_key=$4
+
+scp $username@$ip:$path_to_file ~/ -i $ssh_key
