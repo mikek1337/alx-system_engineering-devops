@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # file transfer script
 path_to_file=$1
 ip=$2
