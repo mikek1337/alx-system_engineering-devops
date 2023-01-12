@@ -1,5 +1,4 @@
-#!/usr/bin/bash
-
+#!/usr/bin/env bash
 # Create and configur nginx
 
 sudo apt update -y
@@ -13,4 +12,4 @@ sudo chmod -R 755 /var/www
 
 echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
 
-sudo service nginx restart 
+sudo service nginx restart
