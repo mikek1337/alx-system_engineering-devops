@@ -15,12 +15,11 @@ echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
 
 sudo cp /etc/nginx/sites-enabled/default nginx-sites-enabled_config_default.backup
 
-sudo apt install haproxy
+sudo apt install haproxy -y
 
 sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
 
-server_config=\
-"
+server_config="
 defaults
   mode http
   timeout client 15s
@@ -36,9 +35,9 @@ backend mik3-tech-backend
     server 453-web-02 3.239.120.96:80 check
 "
 
-echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
+#echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
 
-echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+#echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
 
 if [ "$(pgrep -c haproxy)" -le 0 ]; then
 	sudo service haproxy start
