@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Install and configure nginx server with custom headers
+
+sudo apt update -y
+sudo apt install nginx -y
+
+sudo service nginx start
+
+sudo ufw allow 'Nginx HTTP'
+
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+sudo cp /etc/nginx/sites-enabled/default nginx-sites-enabled_config_default.backup
+
+required_config="server {
+		listen 80 default_server;
+		listen [::]:80 default_server;
+		root /var/www/html;
+		index index.html index.htm index.nginx-debian.html
+		server_name_;
+		add_header X-Served-By \$hostname;
+		location / {
+			try_files \$uri \$uri/ =404;
+		}
+		if (\$request_filename ~ redirect_me){
+			rewrite ^ https://th3-gr00t.tk/ permanent;
+		}
+		error_page 404 /error_404.html;
+		location = /error_404.html {
+			internal;
+		}
+}"
+#wtf shellcode error SC2154 !!!
+echo "$required_config" | sudo dd status=none of=/etc/nginx/sites-enabled/default
+
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+    sudo service nginx start
+else
+    sudo service nginx restart
+fi
