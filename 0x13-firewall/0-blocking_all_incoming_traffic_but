@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Installing and enabling port 22, 443 and 80 port in firewall
 
-sudo apt-get update -y && apt-get install ufw -y
+sudo apt-get update -y
+
+sudo apt-get install ufw -y
 
 sudo systemctl start ufw
 
