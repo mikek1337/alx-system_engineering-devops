@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# change nginx ownership and group
+chown nginx:nginx /usr/sbin/nginx
+
