@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Configure domain name and sub-domain
+
+domain=$1
+subdomain=$2
+subdomains=( "www" "lb-01" "web-01" "web-02" )
+if [ $# -eq 1 ]; then
+  for subs in "${subdomains[@]}"; do
+       getinfo="$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | awk 'NR==2')"
+       address=$(echo "$getinfo" | awk '{print $5}')
+       record=$(echo "$getinfo" | awk '{print $4}')
+
+       echo -e "The subdomain $subdomain is a $record record and points to $address"
+  done
+
+
