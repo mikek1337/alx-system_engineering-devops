@@ -27,4 +27,4 @@ print(
     "Employee {name} is done with tasks({completed}/{total}):".format(name=user_json['name'], completed=completed, total=len(todos_json)))
 for todo in todos_json:
     if todo['completed']:
-        print(todo['title'])
+        print("\t {title}".format(title=todo['title']))
