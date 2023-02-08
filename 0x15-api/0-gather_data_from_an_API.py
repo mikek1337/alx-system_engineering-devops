@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """# Making contact with an API."""
 
-import json
+
 import requests
 import sys
 
