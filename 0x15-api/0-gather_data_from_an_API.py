@@ -12,7 +12,8 @@ if __name__ == "__main__":
             "https://jsonplaceholder.typicode.com/users/{id}".format(id=id))
         user_json = res.json()
         res = requests.get(
-            "https://jsonplaceholder.typicode.com/todos?userId={id}".format(id=id))
+            "https://jsonplaceholder.typicode.com/todos?userId={id}"
+            .format(id=id))
         todos_json = res.json()
 
         def count_completed(x, y=0):
