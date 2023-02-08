@@ -19,7 +19,8 @@ if __name__ == "__main__":
             return y
     completed = list(map(count_completed, todos_json)).count(1)
     print(
-        "Employee {name} is done with tasks({completed}/{total}):".format(name=user_json['name'], completed=completed, total=len(todos_json)))
+        "Employee {name} is done with tasks({completed}/{total}):"
+        .format(name=user_json['name'], completed=completed, total=len(todos_json)))
     for todo in todos_json:
         if todo['completed']:
             print("\t {title}".format(title=todo['title']))
