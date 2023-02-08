@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 y += 1
             return y
         completed = list(map(count_completed, todos_json)).count(1)
-        file = open("USER_ID.csv", "w")
+        file = open(str(user_json["id"])+".csv", "w")
         for todo in todos_json:
             file.write(str(user_json["id"])+","+user_json["name"] +
                        ","+str(todo["completed"])+","+todo["title"]+"\n")
