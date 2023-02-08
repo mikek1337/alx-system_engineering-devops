@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""# Making contact."""
+"""# Making contact with an API."""
 
 import requests
 import json
