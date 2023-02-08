@@ -24,6 +24,7 @@ if __name__ == "__main__":
         file = open(str(user_json["id"])+".csv", "w")
         for todo in todos_json:
             file.write("\""+str(user_json["id"])+"\",\""+user_json["name"]+"\"" +
-                       ",\""+str(todo["completed"])+"\",\""+todo["title"]+"\"\n")
+                       ",\""+str(todo["completed"])
+                       + "\",\""+todo["title"]+"\"\n")
 
         file.close()
