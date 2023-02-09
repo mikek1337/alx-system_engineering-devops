@@ -23,6 +23,7 @@ if __name__ == "__main__":
         completed = list(map(count_completed, todos_json)).count(1)
         file = open(str(user_json["id"])+".csv", "w")
         for todo in todos_json:
-            file.write('"' + str(user_json['id']) + '","' + user_json['username'] + '","' + str(todo['completed']) + '","' + todo['title'] + '"\n')
+            file.write('"' + str(user_json['id']) + '","' + user_json['username'] + '","' + str(
+                todo['completed']) + '","' + todo['title'] + '"\n')
 
         file.close()
