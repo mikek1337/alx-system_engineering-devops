@@ -16,13 +16,15 @@ if __name__ == "__main__":
             .format(id=id))
         todos_json = res.json()
         todo_cus_json = dict()
-        detail = dict()
+
         todo_cus_json[str(user_json["id"])] = list()
 
         for todo in todos_json:
+
+            detail = dict()
             detail["task"] = todo["title"]
             detail["completed"] = todo["completed"]
-            detail["username"] = user_json["name"]
+            detail["username"] = user_json["username"]
             todo_cus_json[str(user_json["id"])].append(detail)
         file = open(str(user_json["id"])+".json", "w")
         json.dump(todo_cus_json, file)
