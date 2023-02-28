@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/python3
 
 """Get subs from reddit"""
 import requests
