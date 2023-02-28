@@ -13,6 +13,7 @@ def top_ten(subreddit):
                        .format(subreddit), headers=headers, params=param)
     if res.status_code == 404 or res.status_code == 301:
         print(None)
+        return
     json_result = res.json()
     data = json_result.get('data')
     children = data.get('children')
